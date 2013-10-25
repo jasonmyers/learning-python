@@ -6,6 +6,9 @@
     "apt": {
       "locked_version": "2.3.0"
     },
+    "ssh-keys": {
+      "path": "../../../Operations/Cookbooks/ssh-keys"
+    },
     "dmg": {
       "locked_version": "2.0.4"
     },
