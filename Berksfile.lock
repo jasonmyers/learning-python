@@ -9,6 +9,9 @@
     "ssh-keys": {
       "path": "../../../Operations/Cookbooks/ssh-keys"
     },
+    "system": {
+      "path": "../../../Operations/Cookbooks/system"
+    },
     "dmg": {
       "locked_version": "2.0.4"
     },
