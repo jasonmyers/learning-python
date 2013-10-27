@@ -1,0 +1,95 @@
+<h2>Lists</h2>
+<ul>
+	<li>You can mix datatypes in Python Lists.</li>
+	<li>You can even embed lists in lists.</li>
+	<li>If you want to copy lists, write c = b[:]</li>
+	<li>This will copy everything from the beginning of b, all the way until the end of b.</li>
+	<li>You could also copy a portion of b. c = b[0:2]</li>
+	<li>a.append("new element") to append to a.</li>
+	<li>list_name[a:b] will return a portion of list_name starting with the index a and ending before the index b.</li>
+	<li>my_list.index("dog") will return the first index that contains the string "dog"</li>
+	<li>my_list.insert(4,"cat") adds the item "cat" at index 4 of my_list, and moves the item previously at index 4 and all items following it to the next index</li>
+</ul>
+<p><pre>
+for variable in list_name:
+	# Do stuff!
+</pre></p>
+
+<ul>
+	<li>my_list.sort() will sort the items in my_list in increasing numerical/alphabetical order.</li>
+	<li>A dictionary is like a list, but you can access values by looking at a key instead of an index.</li>
+	<li><pre>d = {'key1' : 1, 'key2' : 2, 'key3' : 3}</pre></li>
+	<li>You can put lists inside dictionaries.</li>
+	<li>A dictionary's keys MUST be both immutable and hashable.</li>
+	<li> In general, we only use strings, numbers or tuples as keys, but not lists, dictionaries or sets.</li>
+	<li>Lists have a method called .remove(VALUE) which will remove the first instance of the value passed to it.</li>
+	<li>t[-1] gives you the last element of the list.</li>
+</ul>
+
+<h2>Tuples</h2>
+<ul>
+	<li>A tuple is an immutable list. A tuple can not be changed in any way once it is created.</li>
+	<li>A tuple is defined in the same way as a list, except that the whole set of elements is enclosed in parentheses instead of square brackets.</li>
+	<li>tuples have no methods. They are immutable.</li>
+	<li>You can't find elements in a tuple. Tuples have no index method. However, you can use <pre>in</pre> to see if an element exists in the tuple.</li>
+	<li>You do this like this: <pre>'example' in my_list</pre></li>
+	<li>Tuples are faster than lists.</li>
+	<li>If you're defining a constant set of values and all you're ever going to do with it is iterate through it, use a tuple instead of a list.</li>
+	<li>Code is safer if you write protect data that does not need to be changed.</li>
+	<li>Tuples can be used as keys in a dictionary. Lists cannot.</li>
+	<li>Tuples of lists count as mutable and aren't safe as dictionary keys.</li>
+	<li>Tuples can be converted into lists, and vice versa.</li>
+	<li>The built-in tuple function takes a list and returns a tuple, and list takes a tuple and returns a list.</li>
+	<li>tuple freezes a list, and list thaws a tuple.</li>
+</ul>
+
+<h2>Scripting</h2>
+<ul>
+	<li>Put <pre>#! /usr/bin/env python</pre> at the beginning of your script to avoid the need to invoke the script with python.</li>
+	<li>If a script containing if __name__ == “__main__” is run as a standalone script, the "do something" routine is what will be executed.</li>
+	<li>When the Python interpreter reads a source file, it executes all of the code found in it. Before executing the code, it will define a few special variables.</li>
+	<li>If the python interpreter is running that module (the source file) as the main program, it sets the special __name__ variable to have a value "__main__".</li>
+	<li>If this file is being imported from another module, __name__ will be set to the module's name.</li>
+	<li>One of the reasons for doing this is that sometimes you write a module (a .py file) where it can be executed directly.</li>
+	<li>What's the difference between input() and raw_input()? The input() function will try to convert things you enter as if they were Python code, but it has security problems so you should avoid it.</li>
+	<li><pre>pydoc raw_input</pre> will give you input on the raw_input builtin function.</li>
+</ul>
+
+<h2>Modules</h2>
+
+<ul>
+	<li>A module allows you to logically organize your Python code.</li>
+	<li>A module is a Python object with arbitrarily named attributes that you can bind and reference.</li>
+	<li>Import modules like this: <pre>import module1[, module2]</pre></li>
+	<li>Python's from statement lets you import specific attributes from a module into the current namespace like this: <pre>from modname import name1[, name2]</pre></li>
+	<li>To import the fibonacci function from the module fib, do this: <pre>from fib import fibonacci</pre></li>
+	<li>Why would you use <pre>from modname import *</pre> instead of just <pre>import modname</pre></li>
+	<li>When importing, Python searches the cwd, then PYTHONPATH, then /usr/local/lib/python (the default path).</li>
+	<li>The module search path is stored in the system module as sys.path</li>
+	<li>You can set your python path as follows: <pre>set PYTHONPATH=/usr/local/lib/python</pre></li>
+	<li>Variables are names (identifiers) that map to objects.</li>
+	<li> A namespace is a dictionary of variable names (keys) and their corresponding objects (values).</li>
+	<li>Each function has its own local namespace.</li>
+	<li>Python assumes that any variable assigned to a value in a function is local.</li>
+	<li>In order to assign a value to a global variable within a function, you must first use the global statement.</li>
+	<li>The dir() built-in function returns a sorted list of strings containing the names defined by a module.</li>
+	<li>If locals() is called from within a function, it will return all the names that can be accessed locally from that function.</li>
+	<li>If globals() is called from within a function, it will return all the names that can be accessed globally from that function.</li>
+	<li>The return type of both these functions is dictionary. Therefore, names can be extracted using the keys() function.</li>
+	<li>The reload() function imports a previously imported module again.</li>
+	<li>Reloading a module will cause the top-level portion of a module to be executed again.</li>
+	<li>A package is a hierarchical file directory structure that defines a single Python application environment that consists of modules and subpackages and so on.</li>
+	<li>Just create a file Phone/___init___.py then use language like this:
+	<pre>
+		from Pots import Pots
+		from Isdn Import Isdn
+		from G3 import G3
+	</pre></li>
+	<li>Then you import Phone and it will include all of these classes.</li>
+	<li>You can now import Phone and run code like this:
+	<pre>
+		Phone.Pots()
+		Phone.Isdn()
+		Phone.G3()
+	</pre></li>
+</ul>
