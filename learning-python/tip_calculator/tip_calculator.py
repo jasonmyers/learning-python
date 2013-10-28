@@ -14,6 +14,9 @@ parser.add_option("-i", "--tip", dest="tip", help="the tip percentage",
 
 (options, args) = parser.parse_args()
 
+if not options.meal:
+	parser.error("You forgot to enter the cost of your meal!")
+
 tax_value = options.meal * (options.tax/100)
 meal_with_tax = options.meal + tax_value
 tip_value = meal_with_tax * (options.tip/100)
