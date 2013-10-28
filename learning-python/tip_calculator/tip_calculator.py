@@ -1,8 +1,9 @@
 #! /usr/bin/env python
+import sys
 
-meal = float(raw_input("Enter in your meal amount: "))
-tax = float(raw_input("Enter in your tax rate: "))
-tip = float(raw_input("Enter in your tip rate: "))
+meal = float(sys.argv[1])
+tax = float(sys.argv[2])
+tip = float(sys.argv[3])
 
 tax_value = meal * (tax/100)
 meal_with_tax = meal + tax_value
