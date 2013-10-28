@@ -1,8 +1,8 @@
 #! /usr/bin/env python
 
-meal = 65.00
-tax = 8.25
-tip = 20.00
+meal = float(raw_input("Enter in your meal amount: "))
+tax = float(raw_input("Enter in your tax rate: "))
+tip = float(raw_input("Enter in your tip rate: "))
 
 tax_value = meal * (tax/100)
 meal_with_tax = meal + tax_value
